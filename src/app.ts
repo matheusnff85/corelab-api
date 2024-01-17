@@ -1,5 +1,6 @@
 import * as cors from 'cors';
 import * as express from 'express';
+import usersRouter from './routes/users.routes';
 
 class App {
   public app: express.Express;
@@ -10,7 +11,7 @@ class App {
     this.config();
 
     // Rota de teste
-    this.app.get('/', (_req, res) => res.json({ ok: true }));
+    this.app.get('/teste', (_req, res) => res.json({ ok: true }));
   }
 
   private config(): void {
@@ -27,6 +28,7 @@ class App {
     this.app.use(express.json());
     this.app.use(cors());
     this.app.use(accessControl);
+    this.app.use(usersRouter);
   }
 
   public start(PORT: string | number): void {

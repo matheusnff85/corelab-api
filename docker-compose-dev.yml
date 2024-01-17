@@ -5,13 +5,16 @@ services:
     build: /
     ports:
       - 3001:3001
-    platform: linux/x86_64
-    working_dir: /
+    working_dir: /app-backend
+    command: npm run dev
+    volumes:
+      - ./src
     depends_on:
       db:
         condition: service_healthy
     environment:
       - APP_PORT=3001
+      - JWT_SECRET=jwt_secret
       # Os dados abaixo se referem ao container `db`
       - DB_USER=root
       - DB_PASS=123456
