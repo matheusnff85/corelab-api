@@ -1,0 +1,42 @@
+{
+  "name": "corelab-api",
+  "version": "1.0.0",
+  "description": "corelab ts api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusnff85/corelab-api.git"
+  },
+  "keywords": [
+    "corelab-api"
+  ],
+  "author": "Matheus Marinho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheusnff85/corelab-api/issues"
+  },
+  "homepage": "https://github.com/matheusnff85/corelab-api#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "eslint": "^8.56.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.14",
+    "prettier": "^2.7.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}
