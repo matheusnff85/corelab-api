@@ -9,4 +9,9 @@ export default class TasksModel {
     if (result) return true;
     return false;
   }
+
+  public async findAllUserTasks(userId: number): Promise<ITask[] | null> {
+    const result = await this._tasksModel.findAll({ where: { userId } });
+    return result;
+  }
 }

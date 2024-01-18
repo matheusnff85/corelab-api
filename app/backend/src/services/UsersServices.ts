@@ -12,7 +12,7 @@ export default class UsersServices {
     return result;
   }
 
-  public async login(loginObj: ILogin): Promise<IUser | boolean> {
+  public async login(loginObj: ILogin): Promise<IUser> {
     const { username, password } = loginObj;
     const result = await this.userModel.findOne(username, password);
     if (result) return result;

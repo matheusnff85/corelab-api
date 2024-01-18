@@ -1,6 +1,7 @@
 import * as cors from 'cors';
 import * as express from 'express';
 import errorHandler from './middlewares/errorHandler';
+import tasksRouter from './routes/tasks.routes';
 import usersRouter from './routes/users.routes';
 
 class App {
@@ -30,6 +31,7 @@ class App {
     this.app.use(cors());
     this.app.use(accessControl);
     this.app.use(usersRouter);
+    this.app.use(tasksRouter);
     this.app.use(errorHandler);
   }
 
