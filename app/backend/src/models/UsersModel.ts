@@ -9,4 +9,15 @@ export default class UsersModel {
     if (result) return true;
     return false;
   }
+
+  public async findOne(
+    username: string,
+    password: string
+  ): Promise<IUser | null> {
+    const result = await this._userModel.findOne({
+      where: { username, password },
+      attributes: { exclude: ['password'] },
+    });
+    return result;
+  }
 }

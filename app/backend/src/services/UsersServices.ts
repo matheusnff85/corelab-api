@@ -1,3 +1,4 @@
+import { ILogin } from '../interfaces/ILogin';
 import { IUser } from '../interfaces/IUser';
 import UserModel from '../models/UsersModel';
 
@@ -7,5 +8,12 @@ export default class UsersServices {
   public async create(newUser: IUser): Promise<boolean> {
     const result = await this.userModel.create(newUser);
     return result;
+  }
+
+  public async login(loginObj: ILogin): Promise<IUser | boolean> {
+    const { username, password } = loginObj;
+    const result = await this.userModel.findOne(username, password);
+    if (result) return result;
+    return false;
   }
 }
