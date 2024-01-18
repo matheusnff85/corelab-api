@@ -19,12 +19,7 @@ export default class UsersController {
     try {
       const loginObj = req.body;
       const result = await this.userService.login(loginObj);
-      if (result) {
-        return res.status(StatusCodes.OK).json(result);
-      }
-      return res
-        .status(StatusCodes.BAD_REQUEST)
-        .json({ message: 'Password incorrect' });
+      return res.status(StatusCodes.OK).json(result);
     } catch (error) {
       next(error);
     }
