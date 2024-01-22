@@ -49,6 +49,6 @@ Tasks.init(
   }
 );
 
-Tasks.belongsTo(Users, { foreignKey: 'userId', as: 'id' });
+Tasks.belongsTo(Users, { foreignKey: 'userId', as: 'user_id' });
 
 export default Tasks;
