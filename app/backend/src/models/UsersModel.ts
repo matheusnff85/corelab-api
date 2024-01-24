@@ -4,10 +4,9 @@ import { IUser } from '../interfaces/IUser';
 export default class UsersModel {
   private _userModel = Users;
 
-  public async create(newUser: IUser): Promise<boolean> {
+  public async create(newUser: IUser): Promise<IUser> {
     const result = await this._userModel.create(newUser);
-    if (result) return true;
-    return false;
+    return result;
   }
 
   public async findOne(
