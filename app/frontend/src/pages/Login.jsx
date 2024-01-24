@@ -14,8 +14,7 @@ function Login() {
 
   const registerNewUser = async () => {
     try {
-      console.log(process.env);
-      const result = await userRequest(`${apiBaseUrl}users/register`, {
+      const result = await userRequest(`${apiBaseUrl}/users/register`, {
         username,
         name,
         password,
