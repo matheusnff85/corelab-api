@@ -19,7 +19,12 @@ function Login() {
         name,
         password,
       });
-      localStorage.setItem('userInfos', { id: result.id, name: result.name });
+      localStorage.clear();
+      localStorage.setItem(
+        'userInfos',
+        JSON.stringify({ id: result.id, name: result.name })
+      );
+      setLogged(true);
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +35,11 @@ function Login() {
         username,
         password,
       });
-      localStorage.setItem('userInfos', { id: result.id, name: result.name });
+      localStorage.clear();
+      localStorage.setItem(
+        'userInfos',
+        JSON.stringify({ id: result.id, name: result.name })
+      );
       setLogged(true);
     } catch (error) {
       setWrongPass(true);
@@ -38,6 +47,7 @@ function Login() {
   };
 
   if (isLogged) return <Navigate to="/tasks" />;
+  const isBtnDisable = username && name && password;
   return (
     <div className="main">
       <input type="checkbox" id="chk" aria-hidden="true" />
@@ -67,7 +77,11 @@ function Login() {
             value={password}
             onChange={({ target: { value } }) => setPassword(value)}
           />
-          <button onClick={registerNewUser} type="button">
+          <button
+            onClick={registerNewUser}
+            type="button"
+            disabled={!isBtnDisable}
+          >
             Registrar
           </button>
         </form>
@@ -91,7 +105,9 @@ function Login() {
             value={password}
             onChange={({ target: { value } }) => setPassword(value)}
           />
-          {wrongPassword ? <p>Senha incorreta</p> : null}
+          {wrongPassword ? (
+            <p className="incorrectPass">Usuário ou Senha Incorreto(s)</p>
+          ) : null}
           <button onClick={login} type="button">
             Login
           </button>
