@@ -1,0 +1,30 @@
+@use '../_mixins'
+@use '../_variables'
+
+.task-creator
+  @include mixins.center
+  flex-direction: column
+  margin: auto
+  margin-top: 30px
+  width: 30vw
+
+.task-title, .task-description
+  background: #fff
+  border: none
+  outline: none
+  resize: none
+  width: 100%
+
+.task-title-div
+  display: flex
+  flex-direction: row
+  width: 100%
+
+.fav-icon
+  background: transparent
+  border: none
+  cursor: pointer
+  float: left 
+  margin: 0px 0px 0px 360px
+  outline: none
+  position: absolute
