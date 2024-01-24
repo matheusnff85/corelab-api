@@ -19,6 +19,7 @@
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-curly-spacing": [2, { "when": "never" }],
     "comma-dangle": "off",
-    "array-callback-return": "off"
+    "array-callback-return": "off",
+    "jsx-a11y/control-has-associated-label": "off"
   }
 }

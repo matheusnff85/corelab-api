@@ -1,10 +1,23 @@
+import React, { useState } from 'react';
+import Header from '../components/Header';
+
 function Home() {
-  const data = JSON.parse(localStorage.getItem('userInfos'));
-  console.log(data);
+  const [searchTask, setSearchTask] = useState('');
+
+  const userData = JSON.parse(localStorage.getItem('userInfos'));
   return (
-    <h1>
-      {data.id}-{data.name}
-    </h1>
+    <main>
+      <Header
+        name={userData.name}
+        searchTask={searchTask}
+        setSearchTask={setSearchTask}
+      />
+      <div className="task-creator">
+        <input type="text" />
+        <hr />
+        <textarea name="text" id="" cols="30" rows="15" />
+      </div>
+    </main>
   );
 }
 

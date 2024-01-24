@@ -1,14 +1,13 @@
 @use '../_variables'
 @use '../mixins'
   
-body
+.login-page
   margin: 0
   padding: 0
   display: flex
   justify-content: center
   align-items: center
   min-height: 100vh
-  font-family: 'Jost', sans-serif
   background: variables.$bg-color
 
 .main
@@ -28,7 +27,7 @@ body
   width: 100%
   height: 100%
 
-label
+.login-label
   color: #fff
   font-size: 2.3em
   justify-content: center
@@ -38,7 +37,7 @@ label
   cursor: pointer
   transition: 0.5s ease-in-out
 
-input
+.input-login-page
   width: 60%
   height: 30px
   background: #e0dede
@@ -50,7 +49,7 @@ input
   outline: none
   border-radius: 5px
 
-button
+.btn-login-page
   width: 60%
   height: 40px
   margin: 10px auto
@@ -95,5 +94,5 @@ button
     label
       transform: scale(0.6)
 
-.incorrectPass
+.incorrect-pass
   @include mixins.center
