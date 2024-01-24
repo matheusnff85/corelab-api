@@ -7,7 +7,7 @@ import StatusCodes from '../types/statusCodes';
 export default class UsersServices {
   constructor(private userModel: UserModel = new UserModel()) {}
 
-  public async create(newUser: IUser): Promise<boolean> {
+  public async create(newUser: IUser): Promise<IUser> {
     const result = await this.userModel.create(newUser);
     return result;
   }

@@ -9,7 +9,7 @@ export default class UsersController {
     try {
       const newUser = req.body;
       const result = await this.userService.create(newUser);
-      return res.status(StatusCodes.CREATED).json({ created: result });
+      return res.status(StatusCodes.CREATED).json(result);
     } catch (error) {
       next(error);
     }
